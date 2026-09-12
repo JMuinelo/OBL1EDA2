@@ -16,3 +16,8 @@
 ## AAAA-MM-DD — En conjunto
 - Ejemplo: Implementamos ... Bug: ... Lo corregimos ...
 - Pasan los casos de prueba 1 a 4 del ejercicio 1.
+
+## 2026-09-12 — JM
+- Comencé tratando de pensar la estructura del primer ejercicio, me tranqué pensando en crear una funcion ALTA genérica que reciba un tipo T (con template), consulté con CGPT y decidí hacer una función más rústica que chequeé el tipo con ifs.
+- Tomamos la decisión de usar la clase AVL vista en clase, modificando unicamente el tipo int para que sea genérica usando template. Revisé que insertar() no agregara elementos duplicados como pide el ejercicio.
+-Finalmente entendí que la función BUSCAR iba a precisar un método para buscar en el AVL, así que ya lo agregué al TAD.
