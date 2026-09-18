@@ -144,8 +144,16 @@ void ALTA(string tipo){
         pinturas.insertar(nombrePintura);
     }
 }
-void BUSCAR(){
-
+void BUSCAR(string tipo){
+    if(tipo == "M"){
+        long long nroMoneda=0;
+        cin >> nroMoneda;
+        cout << (monedas.pertenece(nroMoneda)?  "si" : "no");
+    }else if( tipo == "P"){
+        string nombrePintura;
+        cin >> nombrePintura;
+        cout << (pinturas.pertenece(nombrePintura)?  "si" : "no");
+    }
 }
 void RANGO(){
 
