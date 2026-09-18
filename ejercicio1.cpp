@@ -110,6 +110,8 @@ class AVL {
             }
         }
 
+        
+
     public:
         AVL(): raiz(NULL) {}
 
@@ -133,7 +135,7 @@ class AVL {
 
 //PRE: recibe un tipo M o P
 //POS: toma por consola un dato (pintura o moneda) y lo inserta en el arbol correspondiente.
-void ALTA(string tipo){
+void ALTA(string tipo, AVL<long long> monedas, AVL<string> pinturas){
     if(tipo == "M"){
         long long nroMoneda=0;
         cin >> nroMoneda;
@@ -144,7 +146,7 @@ void ALTA(string tipo){
         pinturas.insertar(nombrePintura);
     }
 }
-void BUSCAR(string tipo){
+void BUSCAR(string tipo, AVL<long long> monedas, AVL<string> pinturas){
     if(tipo == "M"){
         long long nroMoneda=0;
         cin >> nroMoneda;
@@ -174,10 +176,10 @@ int main()
         string tipo;
         cin >> operacion >> tipo;
         if(operacion == "ALTA"){
-            ALTA(tipo);
+            ALTA(tipo,monedas,pinturas);
         }
         if(operacion == "BUSCAR"){
-            BUSCAR();
+            BUSCAR(tipo,monedas,pinturas);
         }
         if(operacion == "RANGO"){
             RANGO();
