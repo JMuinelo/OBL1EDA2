@@ -167,11 +167,11 @@ void BUSCAR(string tipo, AVL<long long>& monedas, AVL<string>& pinturas){
     if(tipo == "M"){
         long long nroMoneda=0;
         cin >> nroMoneda;
-        cout << (monedas.pertenece(nroMoneda)?  "si" : "no");
+        cout << (monedas.pertenece(nroMoneda)?  "si\n" : "no\n");
     }else if( tipo == "P"){
         string nombrePintura;
         cin >> nombrePintura;
-        cout << (pinturas.pertenece(nombrePintura)?  "si" : "no");
+        cout << (pinturas.pertenece(nombrePintura)?  "si\n" : "no\n");
     }
 }
 void RANGO(string tipo, AVL<long long>& monedas, AVL<string>& pinturas){
