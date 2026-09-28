@@ -6,46 +6,50 @@
 using namespace std;
 class NodoHash {
     public:
-        string palabra;
-        int repeticiones;
+        string dato;
+        int cantVeces;
         NodoHash* sig;
-        NodoHash(string c) : clave(c), cantidad(0), sig(nullptr) {}
+
+        NodoHash(string dato):dato(dato), cantVeces(1), sig(nullptr) {}; 
 };
 
 class Hash {
     private:
-        NodoHash * vec;
+        NodoHash** array;
         int cantElementos;
-        int largo;
+        int largo; // Largo del vector (primo)
 
         int funcionHash(string s) {
-            //hacer con el array
+           //
         }
-    
+
     public:
         Hash(int esperados) {
-            //constructor
+           
         }
 
         ~Hash() {
-            delete[] this->vec;
+            //
         }
 
         void insertar(string s) {
-            //insertar con la clave del array ese
+          //
         }
 
         int cantidadElementos() {
             return cantElementos;
         }
-        void borrar(string s){
-            //nose si pide, chequear
+        
+        int consultarCajon(string palabra){
+            //
         }
-        void esta (string s){
+};
+//
 
-        }
+
+
 int main()
 {
-    // TODO
+    // TODO, a ver si anda 
     return 0;
 }

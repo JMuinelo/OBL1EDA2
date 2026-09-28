@@ -110,7 +110,21 @@ class AVL {
             }
         }
 
-        
+        //PRE: recibo un rango 
+        //POS: imprimo en orden los elementos del AVL dentro del rango
+        void printRango(T desde, T hasta, Nodo* arbol){
+            if(!arbol) return;
+
+            if(desde < arbol->dato){
+                printRango(desde,hasta,arbol->izq);
+            }
+            if(desde <= arbol->dato && arbol->dato <= hasta){
+                cout << arbol->dato << "\n";
+            }
+            if(arbol->dato < hasta){
+                printRango(desde,hasta,arbol->der);
+            }
+        }
 
     public:
         AVL(): raiz(NULL) {}
@@ -130,12 +144,15 @@ class AVL {
         bool pertenece(T x){
             return pertenece(x, this->raiz);
         }
+        void rango(T desde, T hasta){
+            printRango(desde,hasta,this->raiz);
+        }
 };
 //
 
 //PRE: recibe un tipo M o P
 //POS: toma por consola un dato (pintura o moneda) y lo inserta en el arbol correspondiente.
-void ALTA(string tipo, AVL<long long> monedas, AVL<string> pinturas){
+void ALTA(string tipo, AVL<long long>& monedas, AVL<string>& pinturas){
     if(tipo == "M"){
         long long nroMoneda=0;
         cin >> nroMoneda;
@@ -146,19 +163,30 @@ void ALTA(string tipo, AVL<long long> monedas, AVL<string> pinturas){
         pinturas.insertar(nombrePintura);
     }
 }
-void BUSCAR(string tipo, AVL<long long> monedas, AVL<string> pinturas){
+void BUSCAR(string tipo, AVL<long long>& monedas, AVL<string>& pinturas){
     if(tipo == "M"){
         long long nroMoneda=0;
         cin >> nroMoneda;
-        cout << (monedas.pertenece(nroMoneda)?  "si" : "no");
+        cout << (monedas.pertenece(nroMoneda)?  "si\n" : "no\n");
     }else if( tipo == "P"){
         string nombrePintura;
         cin >> nombrePintura;
-        cout << (pinturas.pertenece(nombrePintura)?  "si" : "no");
+        cout << (pinturas.pertenece(nombrePintura)?  "si\n" : "no\n");
     }
 }
-void RANGO(){
+void RANGO(string tipo, AVL<long long>& monedas, AVL<string>& pinturas){
+    if(tipo == "M"){
+        long long desdeMoneda=0;
+        long long hastaMoneda=0;
+        cin >> desdeMoneda >> hastaMoneda;
+        monedas.rango(desdeMoneda,hastaMoneda);
 
+    }else if( tipo == "P"){
+        string desdePintura ="";
+        string hastaPintura ="";
+        cin >> desdePintura >> hastaPintura;
+        pinturas.rango(desdePintura,hastaPintura);
+    }
 }
 
 
@@ -178,11 +206,11 @@ int main()
         if(operacion == "ALTA"){
             ALTA(tipo,monedas,pinturas);
         }
-        if(operacion == "BUSCAR"){
+        else if(operacion == "BUSCAR"){
             BUSCAR(tipo,monedas,pinturas);
         }
-        if(operacion == "RANGO"){
-            RANGO();
+        else if(operacion == "RANGO"){
+            RANGO(tipo,monedas,pinturas);
         }
         
     }
