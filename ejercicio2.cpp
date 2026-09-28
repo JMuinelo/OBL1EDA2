@@ -39,7 +39,7 @@ class Hash {
             return cantElementos;
         }
         void borrar(string s){
-
+            //nose si pide, chequear
         }
         void esta (string s){
 
