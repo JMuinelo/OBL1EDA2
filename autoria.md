@@ -8,17 +8,21 @@
 > con comentarios en el código fuente. La omisión de fuentes puede considerarse plagio.
 
 ## Ejercicio 1
+
 - Implementación íntegramente propia, sin fuentes externas.
 
 ## Ejercicio 2
+
 - Implementación íntegramente propia, sin fuentes externas.
 
 ## Ejercicio 3
-- Implementación íntegramente propia, sin fuentes externas.
+
+- Para este ejercicio utilizamos únicamente la implementación de minHeap vista en clase, la cual modificamos ligeramente para que soportara enteros de mas de 32 bits.
 
 ## Ejercicio 4
+
 - Implementación íntegramente propia, sin fuentes externas.
 
 ## Ejercicio 5
-- Implementación íntegramente propia, sin fuentes externas.
 
+- Implementación íntegramente propia, sin fuentes externas.
