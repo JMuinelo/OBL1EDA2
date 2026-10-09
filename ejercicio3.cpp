@@ -151,6 +151,7 @@ int main() {
     while(heap->getCantidad() > 1){
         suma += heap->fusionar();
     }
-    return suma;
+    cout << suma << "\n";
+    return 0;
 
 }

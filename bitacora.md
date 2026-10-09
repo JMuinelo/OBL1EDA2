@@ -25,3 +25,9 @@
 ## 2026-09-18 - JM, BA
 - Tuvimos problemas con hacer el trabajo dentro de Ubuntu (sobretodo el repositorio), asi que decidimos migrar el proyecto a windows.
 - Terminamos la funcion BUSCAR y RANGO; consultamos con chatgpt y nos recordó que teniamos que pasar los AVL por referencia y no por copia, corregimos eso. Creamos el método rango() del AVL para poder hacer RANGO, el algoritmo no fue complicado, ya se habia visto en EDA1. Falta Probar que todo este correcto.
+
+## FALTA COSO DE EJ 2
+
+## 2026-10-09 - JM, BA
+- Tomamos la estructura del minHeap que usamos en clase, la modificamos ligeramente para que soporte datos de tipo long long en lugar de int. También creamos dos funciones nuevas, getCantidad() y fusionar() (fusionar toma los dos elementos de arriba del heap, los suma, vuelve a meter la suma al heap y tmb la retorna).
+- La lógica del ejercicio fue simple, cargamos el heap con los datos dados y luego ejecutamos fusionar() dentro de un while para fusionar todos y guardar la suma en una variable para luego mostrarla.
