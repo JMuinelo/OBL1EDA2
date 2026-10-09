@@ -10,7 +10,7 @@ using namespace std;
 
 class MinHeap {
 private:
-    int* datos;
+    long long* datos;
     int cantidad;
     int capacidad;
 
@@ -27,7 +27,7 @@ private:
     }
 
     void intercambiar(int pos1, int pos2) {
-        int aux = datos[pos1];
+        long long aux = datos[pos1];
         datos[pos1] = datos[pos2];
         datos[pos2] = aux;
     }
@@ -63,7 +63,7 @@ public:
     MinHeap(int capacidad) {
         this->capacidad = capacidad;
         this->cantidad = 0;
-        this->datos = new int[capacidad];
+        this->datos = new long long[capacidad];
     }
 
     ~MinHeap() {
@@ -78,7 +78,7 @@ public:
         return cantidad;
     }
 
-    void insertar(int valor) {
+    void insertar(long long valor) {
         if (cantidad == capacidad) {
             return;
         }
@@ -88,7 +88,7 @@ public:
         cantidad++;
     }
 
-    int obtenerMinimo() {
+    long long obtenerMinimo() {
         if (esVacio()) {
             cout << "Error: el heap esta vacio" << endl;
             return -1;
@@ -97,13 +97,13 @@ public:
         return datos[0];
     }
 
-    int eliminarMinimo() {
+    long long eliminarMinimo() {
         if (esVacio()) {
             cout << "Error: el heap esta vacio" << endl;
             return -1;
         }
 
-        int minimo = datos[0];
+        long long minimo = datos[0];
 
         datos[0] = datos[cantidad - 1];
         cantidad--;
@@ -121,27 +121,36 @@ public:
         }
         cout << endl;
     }
+    long long fusionar(){
+        long long dato1 = this->eliminarMinimo();
+        long long dato2 = this->eliminarMinimo();
+        long long suma = dato1 + dato2;
+        this->insertar(suma);
+        return suma;
+    } 
+    int getCantidad(){
+        return this->cantidad;
+    }
 };
 
 int main() {
-    MinHeap heap(10);
+    
+    int cantArchivos;
+    cin >> cantArchivos;
 
-    heap.insertar(8);
-    heap.insertar(3);
-    heap.insertar(10);
-    heap.insertar(1);
-    heap.insertar(6);
-    heap.insertar(4);
+    MinHeap* heap = new MinHeap(cantArchivos);
+    //cargar heap
+    for(int i=0;i<cantArchivos;i++){
+        long long dato;
+        cin >> dato;
+        heap->insertar(dato);
+    }
 
-    cout << "Heap:" << endl;
-    heap.imprimir();
 
-    cout << "Minimo: " << heap.obtenerMinimo() << endl;
+    long long suma=0;
+    while(heap->getCantidad() > 1){
+        suma += heap->fusionar();
+    }
+    return suma;
 
-    cout << "Eliminamos: " << heap.eliminarMinimo() << endl;
-
-    cout << "Heap luego de eliminar:" << endl;
-    heap.imprimir();
-
-    return 0;
 }
