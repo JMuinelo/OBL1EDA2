@@ -21,7 +21,8 @@
 
 ## Ejercicio 4
 
-- Sin restricciones de órdenes. / Justificación: ...
+- O((V+A)logV) Temporal/ Justificación: El orden del main es la suma de 2 for (que realizan V y A iteraciones respecetivamente) más el orden de khan(). // Hay un tema importante aca con los ordenes, al usar arrays y no listas puede que se salga de la cota de orden
+- O(V+A) Espacial/ Justificación: ...
 
 ## Ejercicio 5
 

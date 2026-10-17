@@ -31,3 +31,13 @@
 ## 2026-10-09 - JM, BA
 - Tomamos la estructura del minHeap que usamos en clase, la modificamos ligeramente para que soporte datos de tipo long long en lugar de int. También creamos dos funciones nuevas, getCantidad() y fusionar() (fusionar toma los dos elementos de arriba del heap, los suma, vuelve a meter la suma al heap y tmb la retorna).
 - La lógica del ejercicio fue simple, cargamos el heap con los datos dados y luego ejecutamos fusionar() dentro de un while para fusionar todos y guardar la suma en una variable para luego mostrarla.
+
+## 2026-10-14 - JM
+- Adelanté la creación del TAD heap y grafo para el ejercicio 4, no conseguí terminar todo pero quedó encaminado.
+- Tuve problemas a la hora de pensar la implementación de este ejercicio, me mezclé pensando en nodoGrafo o si almacenar structs de tipo Modulo que contuvieran el número y la prioridad, fnalmente me decanté por simplificar todo hasta llegar a la estructura final que estamos entregando.
+
+## 2026-10-16 - JM, BA
+- Terminamos juntos el algoritmo de Kahn, y pensamos la estructura del main.
+- A la hora de compilar tuvimos problemas con el archivo heap.h, con esa vinculación nos asistió Claude.
+
+

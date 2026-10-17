@@ -21,7 +21,7 @@
 
 ## Ejercicio 4
 
-- Implementación íntegramente propia, sin fuentes externas.
+- Para este ejercicio reutilizamos la estructura del Heap del ejercicio anterior, con ligeros cambios que contemplaran el cambio en la lógica. Para la parte de grafos y Kahn no utilizamos ninguna fuente más que lo dado en clase.
 
 ## Ejercicio 5
 
