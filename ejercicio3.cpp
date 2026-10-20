@@ -90,7 +90,6 @@ public:
 
     long long obtenerMinimo() {
         if (esVacio()) {
-            cout << "Error: el heap esta vacio" << endl;
             return -1;
         }
 
@@ -99,7 +98,6 @@ public:
 
     long long eliminarMinimo() {
         if (esVacio()) {
-            cout << "Error: el heap esta vacio" << endl;
             return -1;
         }
 
