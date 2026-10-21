@@ -1,19 +1,15 @@
 # Justificación de órdenes — Obligatorio 1
 
-> **Instrucciones** (borrar esta sección antes de entregar): para cada ejercicio cuya
-> letra plantea restricciones de órdenes (tiempo o espacio), justificar brevemente por
-> qué la solución cumple, indicando qué estructuras de datos o algoritmos se utilizaron.
-> Ejemplo: "La letra exige inserción en O(log n); usamos un min-heap sobre arreglo,
-> donde flotar/hundir recorren a lo sumo la altura del árbol". Si un ejercicio no tiene
-> restricciones de órdenes, indicarlo.
 
 ## Ejercicio 1
 
-- Sin restricciones de órdenes. / Justificación:
+- ALTA y BUSCAR en O(logK)/ Justificación: Bajo por una sola rama, puedo bajar a lo sumo logK veces. A lo sumo logK rotaciones, que son O(1). En total queda O(logK).
+- RANGO en O(logK+R)/ Justificacion: bajo por una rama , a lo sumo logK, para llegar al comienzo del rango. Luego recorro R elementos. En total es O(logK) + O(R) = O(logK + R).
 
 ## Ejercicio 2
 
-- Sin restricciones de órdenes. / Justificación: ...
+- Ultima Linea en O(1) peor caso. / Justificación: maxEnCajon y cajonesDistintos tienen gets que devuelven sus valores en O(1), porque los vamos actualizando segun insertamos elementos.
+- Registrar y consultar en O(L) promedio: Justificacion: La clave se crea en O(L), se hashea en O(L) porque recorre todas sus letras y luego se compara una vez (aproximadamente, en caso ideal) con otros elementos en el bucket. El total es O(L).
 
 ## Ejercicio 3
 
@@ -21,11 +17,16 @@
 
 ## Ejercicio 4
 
-- O((V+A)logV) Temporal/ Justificación: El orden del main es la suma de 2 for (que realizan V y A iteraciones respecetivamente) más el orden de khan(). El orden de Kahn está determinado
+- O((V+A)logV) Temporal/ Justificación: El orden del main es la suma de 2 for (que realizan V y A iteraciones respectivamente) más el orden de Kahn(). El orden de Kahn está determinado por tres partes: 
+    - calcular los grados de entrada, que recorre los V listos y sus A nodos en total en O(V + A); 
+    - las operaciones del heap, donde cada vértice se inserta y se elimina a lo sumo una vez O(V log V); 
+    - el recorrido de las listas de adyacencia, donde cada arista se examina una sola vez, O(A) en total
+    
+Entonces Kahn es O(V + A + V log V), y como el main suma O(V + A) de lecturas y creación de estructuras, el total es O(V + A + V log V), que resulta en O(A + VlogV).
 
-// O((V+A)logV) Temporal/ Justificación: El orden del main es la suma de 2 for (que realizan V y A iteraciones respectivamente) más el orden de Kahn(). El orden de Kahn está determinado por tres partes: calcular los grados de entrada, que recorre los V listos y sus A nodos en total en O(V + A); las operaciones del heap, donde cada vértice se inserta y se elimina a lo sumo una vez O(V log V); y el recorrido de las listas de adyacencia, donde cada arista se examina una sola vez, O(A) en total. Entonces Kahn es O(V + A + V log V), y como el main suma O(V + A) de lecturas y creación de estructuras, el total es O(V + A + V log V), que resulta en O(A + VlogV) .
-- O(V+A) Espacial/ Justificación: ...
+- O(V+A) Espacial/ Justificación: prioridades, dependencias, ordenTopologico, grados y el heap son O(V). La lista de adyacencia que representa al grafo es O(A), hay un nodo por arista. En total es O(V+A).
 
 ## Ejercicio 5
 
-- Sin restricciones de órdenes. / Justificación: ...
+- O(ElogE). / Justificación: Las operaciones del MFSET son aproximadamente (no exacto) O(1) gracias a las optimizaciones. Por ello el orden total de Kruskal termina siendo el orden de insertar E aristas en el heap, cada una cuesta O(logE) (costo de inserción en heap), El total es O(2*ElogE). 2 veces entre insertar y extraer del heap. En total es O(ElogE).
+- O(V+A) Espacial/ Justificación: El minHeap es O(V) y el MFSet es O(A), en total O(V+A).

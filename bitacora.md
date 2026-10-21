@@ -1,21 +1,6 @@
 # Bitácora — Obligatorio 1
 
-**Integrantes:** Nombre Apellido (Nº estudiante), Nombre Apellido (Nº estudiante)
-
-> **Instrucciones** (borrar esta sección antes de entregar): agregar una entrada por
-> cada día trabajado, indicando la fecha y quién trabajó (un integrante o "En conjunto").
-> Registrar el proceso real: ideas exploradas, decisiones y su justificación, partes de
-> implementaciones, bugs encontrados y cómo se corrigieron, resultados de pruebas y dudas
-> abiertas. Si se usó IA ese día, indicar herramienta, consulta y qué se hizo con la
-> respuesta. Una bitácora escrita íntegramente el día de la entrega implica pérdida de puntos.
-
-## AAAA-MM-DD — Nombre
-- Ejemplo: Leí la letra del ejercicio 1. Primera idea: ... pero la restricción de
-  complejidad pide ..., así que ...
-
-## AAAA-MM-DD — En conjunto
-- Ejemplo: Implementamos ... Bug: ... Lo corregimos ...
-- Pasan los casos de prueba 1 a 4 del ejercicio 1.
+**Integrantes:** Bruno Alfaro (349617), Juan Muinelo (350499)
 
 ## 2026-09-12 — JM
 - Comencé tratando de pensar la estructura del primer ejercicio, me tranqué pensando en crear una funcion ALTA genérica que reciba un tipo T (con template), consulté con CGPT y decidí hacer una función más rústica que chequeé el tipo con ifs.
@@ -26,9 +11,12 @@
 - Tuvimos problemas con hacer el trabajo dentro de Ubuntu (sobretodo el repositorio), asi que decidimos migrar el proyecto a windows.
 - Terminamos la funcion BUSCAR y RANGO; consultamos con chatgpt y nos recordó que teniamos que pasar los AVL por referencia y no por copia, corregimos eso. Creamos el método rango() del AVL para poder hacer RANGO, el algoritmo no fue complicado, ya se habia visto en EDA1. Falta Probar que todo este correcto.
 
-## FALTA COSO DE EJ 2
+## 2026-10-02 - JM, BA
+- Comenzamos el Ej 2, implementamos el hash. Tuvimos problemas para pensar la función de hash y entender el enunciado que resultaba un poco confuso por el uso de la palabra "clave" que coincide con la clave del hash.
+- Terminamos el Ejercicio, tuvimos que consultar con IA sobre el factor de carga, pero se solucionó facil.
 
 ## 2026-10-09 - JM, BA
+- Ej 3:
 - Tomamos la estructura del minHeap que usamos en clase, la modificamos ligeramente para que soporte datos de tipo long long en lugar de int. También creamos dos funciones nuevas, getCantidad() y fusionar() (fusionar toma los dos elementos de arriba del heap, los suma, vuelve a meter la suma al heap y tmb la retorna).
 - La lógica del ejercicio fue simple, cargamos el heap con los datos dados y luego ejecutamos fusionar() dentro de un while para fusionar todos y guardar la suma en una variable para luego mostrarla.
 
@@ -42,3 +30,8 @@
 - Nos dimos cuenta de que nuestro codigo no cumplía la restriccion O((V+A)logV) por la funcion obtenerVecinos()(antes devolvía un array), así que la cambiamos y con ello la logica de kahn
 
 
+## 2026-10-21 - JM, BA
+- Implementamos MFSet con ayuda de claude para las optimizaciones.
+- Modificamos nuevamente el minHeap para que soportara aristas (usar un template no habria funcionado porque habia que cambiar la funcion menor().)
+- Implementamos Kruskal, el resto del main era sencillo.
+- Terminamos los detalles de justifiación y autoría.

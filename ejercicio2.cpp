@@ -63,7 +63,7 @@ public:
         return clave; // clave es de la forma 1#0#0#1 etc.
     }
 
-    // INSERTA (Revisar)
+    // INSERTA 
     void insertar(string claveString) // insertar recibe la CLAVE del string, no el string
     {
         int pos = funcionHash(claveString, this->largo);

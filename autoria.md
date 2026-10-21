@@ -1,19 +1,12 @@
 # Declaración de autoría — Obligatorio 1
 
-> **Instrucciones** (borrar esta sección antes de entregar): declarar para cada ejercicio
-> las fuentes utilizadas: código discutido o desarrollado en clase, recursos web (con URL)
-> y uso de herramientas de IA generativa (herramienta, consulta y uso dado, según los
-> lineamientos de Uso de IA de la letra). Si no se usaron fuentes externas, indicarlo
-> explícitamente. Los fragmentos de terceros o generados por IA deben además señalarse
-> con comentarios en el código fuente. La omisión de fuentes puede considerarse plagio.
-
 ## Ejercicio 1
 
 - Utilizamos el codigo de AVL subido al repo de la clase, lo modificamos ligeramente para que fuera template type T.
 
 ## Ejercicio 2
 
-- Implementación íntegramente propia, sin fuentes externas.//FALTA
+- Usamos el codigo del repo de la clase para implementar el Hash, lo convertimos de cerrado a hash abierto. Consultamos IA por dudas menores.
 
 ## Ejercicio 3
 
@@ -25,4 +18,5 @@
 
 ## Ejercicio 5
 
-- Para esta parte nos asistió Claude en la implementación del TAD MFSet, en especial para las 2 optimizaciones path compression y union por tamaño.
+- Para esta parte nos asistió Claude en la implementación del TAD MFSet, en especial para las 2 optimizaciones path compression y union por tamaño. 
+- La implmentacion de minHeap es la misma que antes, solo con ligeros cambios.
