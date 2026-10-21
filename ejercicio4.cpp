@@ -73,21 +73,9 @@ class Grafo{
             }
         }
 
-        // devuelve un array que siempre tiene largo cantVertices
-        int* obtenerVecinos(int v1){
-            
-            int* retorno = new int[this->cantVertices]();
-            nodoGrafo* lista = this->dependencias[v1];
-            int i = 0;
+        nodoGrafo* obtenerVecinos(int v1){
 
-            while(lista){
-                retorno[i] = lista->numVert;
-
-                i++;
-                lista = lista->sig;
-            }
-
-            return retorno;
+            return this->dependencias[v1];
             
         }
         
@@ -112,17 +100,15 @@ class Grafo{
                 ordenTopologico[punteroArray] = actual;
                 punteroArray++;
                 cantidadProcesados++;
-                int* adyacentes = this->obtenerVecinos(actual);
-                for(int i=0; i < this->cantVertices; i++){
-                    int vecino = adyacentes[i];
-                    if(vecino == 0) break; // corto si terminan los adyacentes
-
+                nodoGrafo *lista = this->obtenerVecinos(actual);
+                while (lista)
+                {
+                    int vecino = lista->numVert;
                     grados[vecino]--;
-                    if(grados[vecino] == 0){
+                    if (grados[vecino] == 0)
                         modulosListos->insertar(vecino);
-                    }
+                    lista = lista->sig;
                 }
-                delete [] adyacentes;
             }
             delete [] grados;
             delete modulosListos;

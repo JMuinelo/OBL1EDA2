@@ -39,5 +39,6 @@
 ## 2026-10-16 - JM, BA
 - Terminamos juntos el algoritmo de Kahn, y pensamos la estructura del main.
 - A la hora de compilar tuvimos problemas con el archivo heap.h, con esa vinculación nos asistió Claude.
+- Nos dimos cuenta de que nuestro codigo no cumplía la restriccion O((V+A)logV) por la funcion obtenerVecinos()(antes devolvía un array), así que la cambiamos y con ello la logica de kahn
 
 

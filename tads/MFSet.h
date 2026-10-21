@@ -9,16 +9,19 @@ class MFSet{
         int capacidad;
         int* padre; //padre[i] contiene el representante del grupo al que pertenece i, si padre[i] =i, entonces i es el representante del grupo
         int* tamanio;
+        int cantGrupos;
     public:
         MFSet(int capacidad){
             this->capacidad=capacidad;
+            this->cantGrupos=capacidad;
             int* padre = new int[capacidad+1]; // por lo general los grafos son de 1-v, no tienen vertice 0
             int* tamanio = new int[capacidad+1];
-            for(int i=1;i<capacidad+1;i++){
+            for(int i=0;i<capacidad+1;i++){
                 padre[i]=i; // cada v comienza en su porpio grupo
                 tamanio[i] = 1;
             }
             this->padre=padre;
+            this->tamanio = tamanio;
         }
         ~MFSet(){
             delete[] this->padre;
@@ -47,7 +50,13 @@ class MFSet{
                 tamanio[repA]+= tamanio[repB];
             }
             //como solo busco el tamaño de los representantes, puedo dejar basura en el array, porque no voy a volver a buscar un valor cuando ya no va a ser represetnante de su grupo
+            this->cantGrupos--;
         }
+
+        int getCantGrupos(){
+            return this->cantGrupos;
+        }
+
 
 };
 

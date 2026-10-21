@@ -9,11 +9,11 @@
 
 ## Ejercicio 1
 
-- Implementación íntegramente propia, sin fuentes externas.
+- Utilizamos el codigo de AVL subido al repo de la clase, lo modificamos ligeramente para que fuera template type T.
 
 ## Ejercicio 2
 
-- Implementación íntegramente propia, sin fuentes externas.
+- Implementación íntegramente propia, sin fuentes externas.//FALTA
 
 ## Ejercicio 3
 
@@ -25,4 +25,4 @@
 
 ## Ejercicio 5
 
-- Implementación íntegramente propia, sin fuentes externas.
+- Para esta parte nos asistió Claude en la implementación del TAD MFSet, en especial para las 2 optimizaciones path compression y union por tamaño.

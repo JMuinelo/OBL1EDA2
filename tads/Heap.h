@@ -26,9 +26,9 @@ private:
         return 2 * pos + 2;
     }
 
-    // Devuelve true si a debe salir antes que b REVISAR
+    // Devuelve true si a debe salir antes que b 
     bool menor(T a, T b) {
-        if (a != b) {
+        if (this->prioridades[a] != this->prioridades[b]) {
             return this->prioridades[a] < this->prioridades[b];
         }
 
